@@ -1,0 +1,6 @@
+
+{
+  "name": "GitHub Streak Saver - Alat Otomatisasi",
+  "description": "Alat otomatisasi tingkat profesional yang dirancang untuk menjaga streak kontribusi GitHub Anda tetap hidup dengan pesan commit yang jujur, lucu, atau sarkastik. Dibangun dengan Node.js dan GitHub Actions.",
+  "requestFramePermissions": []
+}
