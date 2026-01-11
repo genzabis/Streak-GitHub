@@ -1,0 +1,46 @@
+
+name: GitHub Streak Saver
+
+on:
+  schedule:
+    # 23:59 WIB is 16:59 UTC
+    - cron: '59 16 * * *'
+  workflow_dispatch:
+    # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  keep-streak:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history so git log works correctly
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run Streak Saver Script
+        env:
+          # Get STREAK_MODE from repository variables, default to HONEST
+          STREAK_MODE: ${{ vars.STREAK_MODE || 'HONEST' }}
+        run: node scripts/saver.mjs
+
+      - name: Push Changes
+        run: |
+          # Only push if there's a new commit to push
+          if git log origin/main..HEAD | grep -q 'commit'; then
+            git push origin main
+          else
+            echo "No new commits to push."
+          fi
