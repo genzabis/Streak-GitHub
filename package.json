@@ -1,0 +1,13 @@
+
+{
+  "name": "github-streak-saver",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Automation tool for maintaining GitHub streaks with style.",
+  "scripts": {
+    "start": "node scripts/saver.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
