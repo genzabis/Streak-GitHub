@@ -39,8 +39,8 @@ jobs:
       - name: Push Changes
         run: |
           # Only push if there's a new commit to push
-          if git log origin/main..HEAD | grep -q 'commit'; then
-            git push origin main
+          if git log origin/${{ github.ref_name }}..HEAD | grep -q 'commit'; then
+            git push origin HEAD:${{ github.ref_name }}
           else
             echo "No new commits to push."
           fi
