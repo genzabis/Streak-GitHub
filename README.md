@@ -1,56 +1,18 @@
 # GitHub Streak Saver 😈
 
-Tool otomatis untuk menjaga streak GitHub kamu tetap hidup
-dengan membuat commit “jujur, lucu, atau nyentil”.
+Tool otomatis untuk menjaga streak GitHub kamu tetap hijau.
+Setiap hari pada pukul 23:59 WIB, bot akan mengecek apakah kamu sudah melakukan commit hari ini. Jika belum, bot akan otomatis membuat commit untuk mengamankan streak-mu.
 
-Kadang kita ngoding.
-Kadang kita cuma nyelamatin kotak hijau.
+## Cara Menggunakan
 
-==================================================
+1. **Upload ke GitHub:** Push semua kode ini ke repository GitHub kamu.
+2. **Setup GitHub Pages (Opsional):** Masuk ke menu **Settings > Pages**, lalu pada bagian "Source", pilih **GitHub Actions**. Halaman UI (*landing page*) kamu akan otomatis online.
+3. **Selesai!** GitHub Actions akan otomatis berjalan setiap malam untuk menjaga streak-mu.
 
-APA INI?
+## Mengatur Mode Pesan (Opsional)
+Pesan otomatis pada commit secara bawaan menggunakan mode *honest* (jujur). Jika kamu ingin mengubahnya, tambahkan variabel baru bernama `STREAK_MODE` di menu **Settings > Secrets and variables > Actions > Variables** pada repository kamu.
 
-GitHub Streak Saver BUKAN website.
-Ini adalah tool automation kecil yang berjalan di GitHub Actions.
-
-Setiap hari sistem akan:
-1. Mengecek apakah kamu sudah commit hari ini
-2. Jika belum, sistem akan membuat commit otomatis
-   dengan pesan bergaya confession (jujur / lucu / nyentil)
-
-==================================================
-
-FITUR
-
-- Berjalan otomatis tanpa server
-- Tidak perlu hosting
-- Tersedia 3 mode pesan:
-  - honest  → jujur
-  - funny   → lucu
-  - savage  → nyentil
-
-==================================================
-
-CARA KERJA SINGKAT
-
-GitHub Actions
-→ Cek commit hari ini
-→ Pilih pesan confession
-→ Auto commit
-
-==================================================
-
-CARA PAKAI (SINGKAT)
-
-1. Push project ini ke GitHub
-2. Pastikan file workflow ada di:
-   .github/workflows/streak-saver.yml
-3. Aktifkan GitHub Actions di repository
-4. Bot akan berjalan otomatis sesuai jadwal
-
-==================================================
-
-CATATAN
-
-Project ini dibuat untuk seru-seruan dan belajar automation.
-Bukan pengganti produktivitas, hanya penyelamat streak 😄
+Pilihan mode yang tersedia:
+- `HONEST` (Jujur)
+- `FUNNY` (Lucu)
+- `SAVAGE` (Nyentil)
